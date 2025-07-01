@@ -6,9 +6,11 @@ import Footer from '../components/Footer'
 function Root() {
   return (
     <div>
-        <Navbar></Navbar>
+      <Navbar></Navbar>
+      <div className=''>
         <Outlet></Outlet>
-        <Footer></Footer>
+      </div>
+      <Footer></Footer>
     </div>
   )
 }
