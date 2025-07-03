@@ -1,16 +1,21 @@
 import React from 'react'
-import { Outlet } from 'react-router'
+import { Outlet, ScrollRestoration } from 'react-router-dom' 
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 
 function Root() {
   return (
     <div>
-      <Navbar></Navbar>
-      <div className=''>
-        <Outlet></Outlet>
+      <div>
+        <Navbar />
       </div>
-      <Footer></Footer>
+
+      <div>
+        <Outlet />
+        <ScrollRestoration />
+      </div>
+
+      <Footer />
     </div>
   )
 }

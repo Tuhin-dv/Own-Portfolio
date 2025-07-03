@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from "react"
-import { Send, Mail, Phone, MapPin, Github, Linkedin, Twitter, Star, Sparkles, Facebook } from "lucide-react"
+import { Send, Mail, Phone, MapPin, Github, Linkedin, Twitter, Star, Sparkles, Facebook, SendIcon } from "lucide-react"
 import Swal from "sweetalert2"
 
 function Contact() {
@@ -114,7 +114,7 @@ function Contact() {
   ]
 
   return (
-    <div className="min-h-screen bg-black relative overflow-hidden">
+    <div className="min-h-screen pt-8 bg-black relative overflow-hidden">
       {/* Enhanced Background Effects */}
       <div className="absolute inset-0">
         <div className="absolute -top-40 -left-40 w-96 h-96 bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-cyan-500/10 rounded-full blur-3xl animate-pulse"></div>
@@ -125,7 +125,7 @@ function Contact() {
         {[...Array(25)].map((_, i) => (
           <div
             key={i}
-            className="absolute w-1 h-1 bg-white/30 rounded-full animate-ping"
+            className="absolute w-1 h-1 bg-white rounded-full animate-ping"
             style={{
               top: `${Math.random() * 100}%`,
               left: `${Math.random() * 100}%`,
@@ -140,19 +140,18 @@ function Contact() {
         <div className="max-w-7xl mx-auto">
           {/* Header Section */}
           <div
-            className={`text-center mb-20 transform transition-all duration-1000 ${
-              isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
-            }`}
+            className={`text-center mb-20 transform transition-all duration-1000 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+              }`}
           >
             {/* Glass Status Badge */}
-            <div className="inline-flex items-center gap-3 bg-white/5 backdrop-blur-2xl border border-white/10 px-8 py-4 rounded-full mb-8 group hover:bg-white/10 hover:border-white/20 transition-all duration-500 shadow-2xl">
+            {/* <div className="inline-flex items-center gap-3 bg-white/5 backdrop-blur-2xl border border-white/10 px-8 py-4 rounded-full mb-8 group hover:bg-white/10 hover:border-white/20 transition-all duration-500 shadow-2xl">
               <Star className="w-5 h-5 text-yellow-400 animate-pulse" />
               <span className="text-gray-200 font-medium text-lg">Let's Connect</span>
               <div className="w-3 h-3 bg-green-400 rounded-full animate-ping"></div>
               <Sparkles className="w-5 h-5 text-purple-400 animate-pulse" />
-            </div>
+            </div> */}
 
-            <h2 className="text-6xl md:text-8xl font-bold mb-8 group relative">
+            <h2 className="text-5xl md:text-6xl font-bold mb-8 group relative">
               <span className="bg-gradient-to-r from-white via-gray-100 to-gray-300 bg-clip-text text-transparent group-hover:from-blue-200 group-hover:via-purple-200 group-hover:to-cyan-200 transition-all duration-700 drop-shadow-2xl">
                 Contact Me
               </span>
@@ -168,9 +167,8 @@ function Contact() {
           <div className="grid lg:grid-cols-2 gap-16 items-start">
             {/* Left Column - Contact Form */}
             <div
-              className={`transform transition-all duration-1000 delay-300 ${
-                isVisible ? "translate-x-0 opacity-100" : "-translate-x-10 opacity-0"
-              }`}
+              className={`transform transition-all duration-1000 delay-300 ${isVisible ? "translate-x-0 opacity-100" : "-translate-x-10 opacity-0"
+                }`}
             >
               <div className="relative group">
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-cyan-500/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
@@ -264,16 +262,15 @@ function Contact() {
 
                     {/* Submit Button */}
                     <div className="relative group/btn">
-                      <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600 rounded-2xl blur-xl opacity-50 group-hover/btn:opacity-100 transition-opacity duration-500"></div>
+                      <div className="absolute inset-0 rounded-2xl blur-xl opacity-50 group-hover/btn:opacity-100 transition-opacity duration-500"></div>
 
                       <button
                         type="submit"
                         disabled={loading}
-                        className={`relative w-full py-5 rounded-2xl font-bold text-xl transition-all duration-500 flex items-center justify-center gap-4 shadow-2xl ${
-                          loading
-                            ? "bg-white/10 backdrop-blur-xl border border-white/20 text-gray-400 cursor-not-allowed"
-                            : "bg-gradient-to-r from-blue-600/20 via-purple-600/20 to-cyan-600/20 backdrop-blur-2xl border border-white/20 text-white hover:bg-gradient-to-r hover:from-blue-600/30 hover:via-purple-600/30 hover:to-cyan-600/30 hover:border-white/30 transform hover:-translate-y-2 hover:scale-105"
-                        }`}
+                        className={`relative w-full py-2  rounded-2xl font-bold text-xl transition-all duration-500 flex items-center justify-center gap-4 shadow-2xl ${loading
+                          ? "bg-white/10 backdrop-blur-xl border border-white/20 text-gray-400 cursor-not-allowed"
+                          : "bg-gradient-to-r from-blue-600/20 via-purple-600/20 to-cyan-600/20 backdrop-blur-2xl border border-white/20 text-white hover:bg-gradient-to-r hover:from-blue-600/30 hover:via-purple-600/30 hover:to-cyan-600/30 hover:border-white/30 transform hover:-translate-y-2 hover:scale-105"
+                          }`}
                       >
                         {loading ? (
                           <>
@@ -282,9 +279,22 @@ function Contact() {
                           </>
                         ) : (
                           <>
-                            <Send className="w-6 h-6 group-hover/btn:rotate-12 transition-transform duration-300" />
-                            <span>Send Message</span>
-                            <span className="text-2xl">🚀</span>
+                            <div className="relative group inline-block">
+                              <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600 rounded-2xl blur-xl opacity-50 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+                              <a
+                                href="/Tuhin-Ahmed-Resume.pdf"
+                                download
+                                className="relative bg-gradient-to-r from-blue-600/20 via-purple-600/20 to-cyan-600/20 backdrop-blur-2xl border border-white/20 text-white px-12 py-5 rounded-2xl font-bold text-xl hover:bg-gradient-to-r hover:from-blue-600/30 hover:via-purple-600/30 hover:to-cyan-600/30 hover:border-white/30 transform hover:-translate-y-3 hover:scale-105 transition-all duration-500 flex items-center justify-center gap-4 shadow-2xl"
+                              >
+
+                                <div className="flex items-center gap-3">
+                                  <SendIcon></SendIcon>
+                                  <span>Send Message</span>
+                                </div>
+
+                              </a>
+                            </div>
                           </>
                         )}
                       </button>
@@ -302,9 +312,8 @@ function Contact() {
 
             {/* Right Column - Contact Info */}
             <div
-              className={`transform transition-all duration-1000 delay-500 ${
-                isVisible ? "translate-x-0 opacity-100" : "translate-x-10 opacity-0"
-              }`}
+              className={`transform transition-all duration-1000 delay-500 ${isVisible ? "translate-x-0 opacity-100" : "translate-x-10 opacity-0"
+                }`}
             >
               {/* Contact Information */}
               <div className="relative group mb-8">

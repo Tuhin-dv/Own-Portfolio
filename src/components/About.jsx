@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react"
 import { Code2, Palette, Rocket, Users, Coffee, ArrowRight, Download, CheckCircle, Star } from "lucide-react"
+import { Link } from "react-router"
 
 const About = () => {
   const [isVisible, setIsVisible] = useState(false)
@@ -33,7 +34,7 @@ const About = () => {
   ]
 
   return (
-    <div className="min-h-screen bg-black relative overflow-hidden">
+    <div className="min-h-screen pt-8 bg-black relative overflow-hidden">
       {/* Enhanced Background Effects */}
       <div className="absolute inset-0">
         {/* Large glowing orbs */}
@@ -50,7 +51,7 @@ const About = () => {
         {[...Array(25)].map((_, i) => (
           <div
             key={i}
-            className="absolute w-1 h-1 bg-white/30 rounded-full animate-ping"
+            className="absolute w-1 h-1 bg-white rounded-full animate-ping"
             style={{
               top: `${Math.random() * 100}%`,
               left: `${Math.random() * 100}%`,
@@ -79,20 +80,21 @@ const About = () => {
         <div className="max-w-6xl mx-auto">
           {/* Header Section */}
           <div
-            className={`text-center mb-20 transform transition-all duration-1000 ${
-              isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
-            }`}
+            className={`text-center mb-20 transform transition-all duration-1000 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+              }`}
           >
             {/* Glass Status Badge */}
-            <div className="inline-flex items-center gap-3 bg-white/5 backdrop-blur-2xl border border-white/10 px-8 py-4 rounded-full mb-8 group hover:bg-white/10 hover:border-white/20 transition-all duration-500 shadow-2xl">
+            {/* <div className="inline-flex items-center gap-3 bg-white/5 backdrop-blur-2xl border border-white/10 px-8 py-4 rounded-full mb-8 group hover:bg-white/10 hover:border-white/20 transition-all duration-500 shadow-2xl">
               <Star className="w-5 h-5 text-yellow-400 animate-pulse" />
               <span className="text-gray-200 font-medium text-lg">About Me</span>
               <div className="w-3 h-3 bg-green-400 rounded-full animate-ping"></div>
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-cyan-500/10 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-            </div>
+            </div> */}
 
-            <h2 className="text-6xl md:text-8xl font-bold mb-8 group relative">
-              <span className="bg-gradient-to-r from-white via-gray-100 to-gray-300 bg-clip-text text-transparent group-hover:from-blue-200 group-hover:via-purple-200 group-hover:to-cyan-200 transition-all duration-700 drop-shadow-2xl">
+            {/* section-title====================================== */}
+
+            <h2 className="text-5xl md:text-6xl font-bold mb-8 group relative">
+              <span className="bg-gradient-to-r  from-white via-gray-100 to-gray-300 bg-clip-text text-transparent group-hover:from-blue-200 group-hover:via-purple-200 group-hover:to-cyan-200 transition-all duration-700 drop-shadow-2xl">
                 About Me
               </span>
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-cyan-500/20 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
@@ -107,9 +109,8 @@ const About = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             {/* Left Column - Story */}
             <div
-              className={`transform transition-all duration-1000 delay-300 ${
-                isVisible ? "translate-x-0 opacity-100" : "-translate-x-10 opacity-0"
-              }`}
+              className={`transform transition-all duration-1000 delay-300 ${isVisible ? "translate-x-0 opacity-100" : "-translate-x-10 opacity-0"
+                }`}
             >
               {/* Glass Story Card */}
               <div className="relative group">
@@ -172,9 +173,8 @@ const About = () => {
 
             {/* Right Column - Skills & Stats */}
             <div
-              className={`transform transition-all duration-1000 delay-500 ${
-                isVisible ? "translate-x-0 opacity-100" : "translate-x-10 opacity-0"
-              }`}
+              className={`transform transition-all duration-1000 delay-500 ${isVisible ? "translate-x-0 opacity-100" : "translate-x-10 opacity-0"
+                }`}
             >
               {/* Glass Skills Section */}
               <div className="relative group mb-8">
@@ -209,9 +209,8 @@ const About = () => {
                         <div className="relative">
                           <div className="w-full bg-white/10 backdrop-blur-xl rounded-full h-3 overflow-hidden border border-white/20">
                             <div
-                              className={`h-full bg-gradient-to-r ${skill.color} rounded-full transition-all duration-1000 relative ${
-                                activeSkill === index ? "animate-pulse shadow-lg" : ""
-                              }`}
+                              className={`h-full bg-gradient-to-r ${skill.color} rounded-full transition-all duration-1000 relative ${activeSkill === index ? "animate-pulse shadow-lg" : ""
+                                }`}
                               style={{
                                 width: `${skill.level}%`,
                                 transform: activeSkill === index ? "scaleY(1.1)" : "scaleY(1)",
@@ -258,29 +257,20 @@ const About = () => {
 
           {/* Glass CTA Section */}
           <div
-            className={`text-center mt-24 transform transition-all duration-1000 delay-700 ${
-              isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
-            }`}
+            className={`text-center mt-24 transform transition-all duration-1000 delay-700 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+              }`}
           >
             <div className="flex flex-col sm:flex-row gap-8 justify-center">
               {/* Primary Glass Button */}
               <div className="relative group">
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600 rounded-2xl blur-xl opacity-50 group-hover:opacity-100 transition-opacity duration-500"></div>
 
-                <button className="relative bg-gradient-to-r from-blue-600/20 via-purple-600/20 to-cyan-600/20 backdrop-blur-2xl border border-white/20 text-white px-12 py-5 rounded-2xl font-bold text-xl hover:bg-gradient-to-r hover:from-blue-600/30 hover:via-purple-600/30 hover:to-cyan-600/30 hover:border-white/30 transform hover:-translate-y-3 hover:scale-105 transition-all duration-500 flex items-center justify-center gap-4 shadow-2xl">
-                  <span className="relative z-10">View My Resume</span>
-                  <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform duration-300 relative z-10" />
-                </button>
-              </div>
-
-              {/* Secondary Glass Button */}
-              <div className="relative group">
-                <div className="absolute inset-0 bg-gradient-to-r from-gray-500/20 to-gray-700/20 rounded-2xl blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-
-                <button className="relative bg-white/5 backdrop-blur-2xl border border-white/20 text-gray-100 px-12 py-5 rounded-2xl font-bold text-xl hover:bg-white/10 hover:border-white/30 transition-all duration-500 flex items-center justify-center gap-4 shadow-2xl hover:scale-105 hover:-translate-y-3">
-                  <Download className="w-6 h-6 group-hover:translate-y-1 transition-transform duration-300" />
-                  <span>Download CV</span>
-                </button>
+                <Link to='/resume'>
+                  <button className="relative bg-gradient-to-r from-blue-600/20 via-purple-600/20 to-cyan-600/20 backdrop-blur-2xl border border-white/20 text-white px-12 py-5 rounded-2xl font-bold text-xl hover:bg-gradient-to-r hover:from-blue-600/30 hover:via-purple-600/30 hover:to-cyan-600/30 hover:border-white/30 transform hover:-translate-y-3 hover:scale-105 transition-all duration-500 flex items-center justify-center gap-4 shadow-2xl">
+                    <span className="relative z-10">View My Resume</span>
+                    <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform duration-300 relative z-10" />
+                  </button>
+                </Link>
               </div>
             </div>
           </div>

@@ -1,4 +1,3 @@
-"use client"
 
 import { Code2 } from "lucide-react"
 import { useState } from "react"
@@ -42,7 +41,7 @@ function Navbar() {
             {/* Logo */}
             <Link to='/'>
               <div className="flex-shrink-0">
-                <div className="flex items-center gap-4 mb-6">
+                <div className="flex items-center gap-4 my-4">
                   <div className="relative">
                     <div className="w-12 h-12 bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-cyan-500/20 backdrop-blur-xl border border-white/20 rounded-2xl flex items-center justify-center">
                       <Code2 className="w-6 h-6 text-white" />
@@ -68,14 +67,18 @@ function Navbar() {
             </div>
 
             {/* CTA Button */}
-            <div className="hidden lg:flex items-center gap-6">
-              <button className="relative group bg-gradient-to-r from-blue-600 via-blue-700 to-indigo-700 text-white px-8 py-3 rounded-full font-semibold hover:from-blue-700 hover:via-blue-800 hover:to-indigo-800 transform hover:-translate-y-1 transition-all duration-300 flex items-center gap-2 shadow-xl hover:shadow-2xl hover:shadow-blue-500/25">
+           <div className="relative group inline-block">
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600 rounded-2xl blur-xl opacity-50 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+              <Link
+               to='/contact'
+                download
+                className="relative bg-gradient-to-r from-blue-600/20 via-purple-600/20 to-cyan-600/20 backdrop-blur-2xl border border-white/20 text-white px-10 py-4 rounded-2xl font-bold text-xl hover:bg-gradient-to-r hover:from-blue-600/30 hover:via-purple-600/30 hover:to-cyan-600/30 hover:border-white/30 transform hover:-translate-y-2 hover:scale-105 transition-all duration-500 flex items-center justify-center gap-4 shadow-2xl"
+              >
+                
                 <span>Hire Me</span>
-                <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-blue-700 to-indigo-700 rounded-full blur-lg opacity-50 -z-10 group-hover:opacity-75 transition-opacity duration-300"></div>
-              </button>
+              
+              </Link>
             </div>
 
             {/* Mobile button */}
@@ -106,12 +109,17 @@ function Navbar() {
               {navLinks}
             </div>
             <div className="pt-6 space-y-4">
-              <button className="w-full bg-gradient-to-r from-blue-600 via-blue-700 to-indigo-700 text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 flex items-center justify-center gap-2 shadow-xl">
+
+
+
+              <button className="w-full bg-gradient-to-r from-blue-600/20 via-purple-600/20 to-cyan-600/20 backdrop-blur-2xl border border-white/20 text-white px-12 py-5 rounded-2xl font-bold text-xl hover:bg-gradient-to-r hover:from-blue-600/30 hover:via-purple-600/30 hover:to-cyan-600/30 hover:border-white/30 transform hover:-translate-y-3 hover:scale-105 transition-all duration-500 flex items-center justify-center gap-4 shadow-2xl">
                 Hire Me
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
               </button>
+
+              
             </div>
           </div>
         </div>

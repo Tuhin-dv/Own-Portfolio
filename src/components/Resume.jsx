@@ -71,7 +71,7 @@ const Resume = () => {
   ]
 
   return (
-    <div className="min-h-screen bg-black relative overflow-hidden">
+    <div className="min-h-screen pt-8 bg-black relative overflow-hidden">
       {/* Enhanced Background Effects */}
       <div className="absolute inset-0">
         <div className="absolute -top-40 -left-40 w-96 h-96 bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-cyan-500/10 rounded-full blur-3xl animate-pulse"></div>
@@ -102,13 +102,13 @@ const Resume = () => {
             }`}
           >
             {/* Glass Status Badge */}
-            <div className="inline-flex items-center gap-3 bg-white/5 backdrop-blur-2xl border border-white/10 px-8 py-4 rounded-full mb-8 group hover:bg-white/10 hover:border-white/20 transition-all duration-500 shadow-2xl">
+            {/* <div className="inline-flex items-center gap-3 bg-white/5 backdrop-blur-2xl border border-white/10 px-8 py-4 rounded-full mb-8 group hover:bg-white/10 hover:border-white/20 transition-all duration-500 shadow-2xl">
               <Award className="w-5 h-5 text-yellow-400 animate-pulse" />
               <span className="text-gray-200 font-medium text-lg">Professional Resume</span>
               <div className="w-3 h-3 bg-green-400 rounded-full animate-ping"></div>
-            </div>
+            </div> */}
 
-            <h2 className="text-6xl md:text-8xl font-bold mb-8 group relative">
+            <h2 className="text-5xl md:text-6xl font-bold mb-8 group relative">
               <span className="bg-gradient-to-r from-white via-gray-100 to-gray-300 bg-clip-text text-transparent group-hover:from-blue-200 group-hover:via-purple-200 group-hover:to-cyan-200 transition-all duration-700 drop-shadow-2xl">
                 Resume
               </span>

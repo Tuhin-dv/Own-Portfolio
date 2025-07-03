@@ -64,7 +64,7 @@ function Home() {
       description:
         "Full-stack e-commerce solution with React, Node.js, and Stripe integration for seamless shopping experience.",
       tech: ["React", "Node.js", "MongoDB", "Stripe"],
-      image: "/placeholder.svg?height=200&width=300",
+      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=250&fit=crop&crop=center",
       liveUrl: "#",
       githubUrl: "#",
       status: "Live",
@@ -74,7 +74,7 @@ function Home() {
       description:
         "Modern portfolio website with glassmorphism design, animations, and responsive layout for creative professionals.",
       tech: ["Next.js", "Tailwind", "Framer Motion", "Vercel"],
-      image: "/placeholder.svg?height=200&width=300",
+      image: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=400&h=250&fit=crop&crop=center",
       liveUrl: "#",
       githubUrl: "#",
       status: "Live",
@@ -84,7 +84,7 @@ function Home() {
       description:
         "Collaborative task management application with real-time updates, team collaboration, and progress tracking.",
       tech: ["React", "Firebase", "Material-UI", "PWA"],
-      image: "/placeholder.svg?height=200&width=300",
+      image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=400&h=250&fit=crop&crop=center",
       liveUrl: "#",
       githubUrl: "#",
       status: "In Progress",
@@ -128,9 +128,8 @@ function Home() {
           {/* Stats Section */}
           <section className="py-20 px-4">
             <div
-              className={`max-w-6xl mx-auto transform transition-all duration-1000 ${
-                isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
-              }`}
+              className={`max-w-6xl mx-auto transform transition-all duration-1000 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+                }`}
             >
               <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
                 {stats.map((stat, index) => (
@@ -151,9 +150,8 @@ function Home() {
           {/* Services Section */}
           <section className="py-20 px-4">
             <div
-              className={`max-w-6xl mx-auto transform transition-all duration-1000 delay-300 ${
-                isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
-              }`}
+              className={`max-w-6xl mx-auto transform transition-all duration-1000 delay-300 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+                }`}
             >
               {/* Section Header */}
               <div className="text-center mb-20">
@@ -222,9 +220,8 @@ function Home() {
           {/* Projects Section */}
           <section className="py-20 px-4">
             <div
-              className={`max-w-6xl mx-auto transform transition-all duration-1000 delay-500 ${
-                isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
-              }`}
+              className={`max-w-6xl mx-auto transform transition-all duration-1000 delay-500 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+                }`}
             >
               {/* Section Header */}
               <div className="text-center mb-20">
@@ -251,7 +248,7 @@ function Home() {
                   <div key={index} className="relative group">
                     <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-cyan-500/10 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
 
-                    <div className="relative bg-white/5 backdrop-blur-2xl border border-white/10 rounded-3xl overflow-hidden hover:bg-white/10 hover:border-white/20 transition-all duration-700 group hover:scale-105">
+                    <div className="relative bg-white/5 backdrop-blur-2xl border border-white/10 rounded-3xl overflow-hidden hover:bg-white/10 hover:border-white/20 transition-all duration-700 group hover:scale-105 h-full flex flex-col">
                       {/* Project Image */}
                       <div className="relative overflow-hidden">
                         <img
@@ -263,11 +260,10 @@ function Home() {
 
                         {/* Status Badge */}
                         <div
-                          className={`absolute top-4 right-4 px-3 py-1 rounded-full text-xs font-medium ${
-                            project.status === "Live"
+                          className={`absolute top-4 right-4 px-3 py-1 rounded-full text-xs font-medium ${project.status === "Live"
                               ? "bg-green-500/20 text-green-400 border border-green-500/30"
                               : "bg-orange-500/20 text-orange-400 border border-orange-500/30"
-                          }`}
+                            }`}
                         >
                           {project.status}
                         </div>
@@ -290,9 +286,9 @@ function Home() {
                       </div>
 
                       {/* Project Content */}
-                      <div className="p-8">
+                      <div className="p-8 flex flex-col flex-grow">
                         <h3 className="text-xl font-bold text-white mb-3">{project.title}</h3>
-                        <p className="text-gray-300 leading-relaxed mb-6 text-sm">{project.description}</p>
+                        <p className="text-gray-300 leading-relaxed mb-6 text-sm flex-grow">{project.description}</p>
 
                         {/* Tech Stack */}
                         <div className="flex flex-wrap gap-2 mb-6">
@@ -307,7 +303,7 @@ function Home() {
                         </div>
 
                         {/* Project Links */}
-                        <div className="flex gap-4">
+                        <div className="flex gap-4 mt-auto">
                           <Link
                             to="/projects"
                             className="flex items-center gap-2 text-blue-400 hover:text-blue-300 transition-colors duration-300 text-sm font-medium group/link"
@@ -321,15 +317,15 @@ function Home() {
                   </div>
                 ))}
               </div>
+
             </div>
           </section>
 
           {/* CTA Section */}
           <section className="py-20 px-4">
             <div
-              className={`max-w-4xl mx-auto text-center transform transition-all duration-1000 delay-700 ${
-                isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
-              }`}
+              className={`max-w-4xl mx-auto text-center transform transition-all duration-1000 delay-700 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+                }`}
             >
               <div className="relative group">
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-cyan-500/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
