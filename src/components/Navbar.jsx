@@ -36,7 +36,7 @@ function Navbar() {
   return (
     <div className="fixed top-0 left-0 w-full z-50">
       <nav className="px-4 sm:px-6 lg:px-8">
-        <div className="max-w-[1760px] mx-auto">
+        <div className="max-w-[1600px] mx-auto">
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
             <Link to='/'>
@@ -49,7 +49,7 @@ function Navbar() {
                     <div className="absolute inset-0 bg-gradient-to-r from-blue-500 via-purple-500 to-cyan-500 rounded-2xl blur-lg opacity-30"></div>
                   </div>
                   <div>
-                    <h3 className="text-2xl font-bold text-white">Tuhin Ahmed</h3>
+                    <h3 className="text-2xl font-bold text-white">Tawhidul Islam</h3>
                     <p className="text-gray-400 text-sm">Frontend Developer</p>
                   </div>
                 </div>
