@@ -1,11 +1,28 @@
 import myImg from '../assets/myImg.svg'
 function Hero() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black relative overflow-hidden">
+    <div className="min-h-screen ">
+         <div className="absolute inset-0">
+          <div className="absolute -top-40 -left-40 w-96 h-96 bg-gradient-to-r from-blue-500/5 via-purple-500/5 to-cyan-500/5 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute -top-20 -right-40 w-80 h-80 bg-gradient-to-r from-purple-500/5 via-pink-500/5 to-blue-500/5 rounded-full blur-3xl animate-pulse delay-1000"></div>
+          <div className="absolute -bottom-40 left-1/2 w-96 h-96 bg-gradient-to-r from-cyan-500/5 via-blue-500/5 to-purple-500/5 rounded-full blur-3xl animate-pulse delay-2000"></div>
+
+          {/* Floating particles */}
+          {[...Array(20)].map((_, i) => (
+            <div
+              key={i}
+              className="absolute w-1 h-1 bg-white rounded-full animate-ping"
+              style={{
+                top: `${Math.random() * 100}%`,
+                left: `${Math.random() * 100}%`,
+                animationDelay: `${Math.random() * 3}s`,
+                animationDuration: `${2 + Math.random() * 2}s`,
+              }}
+            />
+          ))}
+        </div>
       {/* Background decorative elements */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-purple-900/20 via-transparent to-transparent"></div>
-      <div className="absolute top-1/4 right-1/4 w-72 h-72 bg-purple-500/10 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-1/4 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
+      
 
       <div className="relative z-10 pt-20 pb-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-[1600px] mx-auto">
@@ -43,7 +60,7 @@ function Hero() {
               </div>
 
               {/* Stats or highlights */}
-              <div className="grid grid-cols-6 gap-8 pt-8 border-t border-gray-800">
+              <div className="grid grid-cols-6 gap-8 pt-8 ">
                 <div className="text-center lg:text-left">
                   <div className="text-2xl sm:text-3xl font-bold text-white">12+</div>
                   <div className="text-sm text-gray-400">Projects</div>

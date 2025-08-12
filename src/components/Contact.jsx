@@ -72,21 +72,21 @@ function Contact() {
     {
       icon: Mail,
       label: "Email",
-      value: "tuhin@example.com",
+      value: "tawhidul.dev@gmail.com",
       href: "mailto:tuhin@example.com",
       color: "text-blue-400",
     },
     {
       icon: Phone,
       label: "Phone",
-      value: "+880 123 456 789",
-      href: "tel:+880123456789",
+      value: "+880 01762923526",
+      href: "tel:+88001762923526",
       color: "text-green-400",
     },
     {
       icon: MapPin,
       label: "Location",
-      value: "Dhaka, Bangladesh",
+      value: "Sirajganj, Belkuchi",
       href: "#",
       color: "text-purple-400",
     },
@@ -96,19 +96,19 @@ function Contact() {
     {
       icon: Github,
       label: "GitHub",
-      href: "https://github.com/Tuhin-dv?tab=repositories",
+      href: "https://github.com/Tuhin-dv",
       color: "hover:bg-gray-600 hover:border-gray-400",
     },
     {
       icon: Linkedin,
       label: "LinkedIn",
-      href: "https://linkedin.com/in/tuhin",
+      href: "https://www.linkedin.com/in/tawhidul-islam-dev/",
       color: "hover:bg-blue-600 hover:border-blue-400",
     },
     {
       icon: Facebook,
       label: "Facebook",
-      href: "https://www.facebook.com/Tawhidul.NOT.Axid",
+      href: "https://www.facebook.com/Tawhidul.dev",
       color: "hover:bg-cyan-600 hover:border-cyan-400",
     },
   ]

@@ -18,6 +18,7 @@ import {
   Eye,
 } from "lucide-react"
 import Hero from "./Hero"
+import Skills from "./Skills"
 
 function Home() {
   const [isVisible, setIsVisible] = useState(false)
@@ -47,6 +48,22 @@ function Home() {
       features: ["React Development", "Modern JavaScript", "Clean Architecture", "Performance Optimization"],
       color: "from-purple-500 to-pink-500",
       bgColor: "from-purple-500/10 to-pink-500/10",
+    },
+    {
+      icon: Zap,
+      title: "Performance",
+      description: "Optimized sites for speed, SEO, and accessibility to maximize your digital presence.",
+      features: ["Speed Optimization", "SEO Implementation", "Accessibility", "Analytics Integration"],
+      color: "from-orange-500 to-red-500",
+      bgColor: "from-orange-500/10 to-red-500/10",
+    },
+    {
+      icon: Zap,
+      title: "Performance",
+      description: "Optimized sites for speed, SEO, and accessibility to maximize your digital presence.",
+      features: ["Speed Optimization", "SEO Implementation", "Accessibility", "Analytics Integration"],
+      color: "from-orange-500 to-red-500",
+      bgColor: "from-orange-500/10 to-red-500/10",
     },
     {
       icon: Zap,
@@ -102,12 +119,10 @@ function Home() {
     <div>
       <Hero />
 
-      <div className="bg-black relative overflow-hidden">
+      <div className="bg-gradient-to-r from-black/25 to-black/50 via-transparent relative overflow-hidden">
         {/* Background Effects */}
         <div className="absolute inset-0">
-          <div className="absolute -top-40 -left-40 w-96 h-96 bg-gradient-to-r from-blue-500/5 via-purple-500/5 to-cyan-500/5 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute -top-20 -right-40 w-80 h-80 bg-gradient-to-r from-purple-500/5 via-pink-500/5 to-blue-500/5 rounded-full blur-3xl animate-pulse delay-1000"></div>
-          <div className="absolute -bottom-40 left-1/2 w-96 h-96 bg-gradient-to-r from-cyan-500/5 via-blue-500/5 to-purple-500/5 rounded-full blur-3xl animate-pulse delay-2000"></div>
+         
 
           {/* Floating particles */}
           {[...Array(20)].map((_, i) => (
@@ -150,70 +165,8 @@ function Home() {
           {/* Services Section */}
           <section className="py-20 px-4">
             <div
-              className={`max-w-6xl mx-auto transform transition-all duration-1000 delay-300 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
-                }`}
-            >
-              {/* Section Header */}
-              <div className="text-center mb-20">
-                <div className="inline-flex items-center gap-3 bg-white/5 backdrop-blur-xl border border-white/10 px-6 py-3 rounded-full mb-8 group hover:bg-white/10 hover:border-white/20 transition-all duration-300">
-                  <Sparkles className="w-4 h-4 text-purple-400 animate-pulse" />
-                  <span className="text-gray-200 font-medium">What I Offer</span>
-                  <Star className="w-4 h-4 text-yellow-400 animate-pulse delay-500" />
-                </div>
-
-                <h2 className="text-5xl md:text-6xl font-bold mb-6 group">
-                  <span className="bg-gradient-to-r from-white via-gray-200 to-gray-400 bg-clip-text text-transparent group-hover:from-blue-300 group-hover:via-purple-300 group-hover:to-cyan-300 transition-all duration-500">
-                    Professional Services
-                  </span>
-                </h2>
-
-                <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-                  Comprehensive web development solutions tailored to your business needs
-                </p>
-              </div>
-
-              {/* Services Grid */}
-              <div className="grid md:grid-cols-3 gap-8">
-                {services.map((service, index) => (
-                  <div key={index} className="relative group">
-                    <div
-                      className={`absolute inset-0 bg-gradient-to-r ${service.bgColor} rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700`}
-                    ></div>
-
-                    <div
-                      className={`relative bg-white/5 backdrop-blur-2xl border border-white/10 rounded-3xl p-10 hover:bg-white/10 hover:border-white/20 transition-all duration-700 group hover:scale-105 ${activeService === index ? "ring-2 ring-white/20" : ""}`}
-                    >
-                      {/* Service Icon */}
-                      <div className="relative mb-8">
-                        <div
-                          className={`w-16 h-16 bg-gradient-to-r ${service.bgColor} backdrop-blur-xl border border-white/20 rounded-2xl flex items-center justify-center mb-4`}
-                        >
-                          <service.icon className="w-8 h-8 text-white" />
-                        </div>
-                        <div
-                          className={`absolute inset-0 bg-gradient-to-r ${service.color} rounded-2xl blur-lg opacity-30 group-hover:opacity-60 transition-opacity duration-500`}
-                        ></div>
-                      </div>
-
-                      {/* Service Content */}
-                      <h3 className="text-2xl font-bold text-white mb-4">{service.title}</h3>
-                      <p className="text-gray-300 leading-relaxed mb-8">{service.description}</p>
-
-                      {/* Features List */}
-                      <div className="space-y-3">
-                        {service.features.map((feature, featureIndex) => (
-                          <div key={featureIndex} className="flex items-center gap-3 group/feature">
-                            <CheckCircle className="w-4 h-4 text-green-400 group-hover/feature:animate-pulse" />
-                            <span className="text-gray-300 group-hover/feature:text-white transition-colors duration-300 text-sm">
-                              {feature}
-                            </span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
+              className="max-w-[1600px] mx-auto">
+             <Skills></Skills>
             </div>
           </section>
 
