@@ -277,7 +277,7 @@ function Home() {
           {/* CTA Section */}
           <section className="py-20 px-4">
             <div
-              className={`max-w-4xl mx-auto text-center transform transition-all duration-1000 delay-700 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+              className={`max-w-[1600px] mx-auto text-center transform transition-all duration-1000 delay-700 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
                 }`}
             >
               <div className="relative group">

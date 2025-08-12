@@ -1,34 +1,51 @@
-import myImg from '../assets/myImg.svg'
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import myImg from "../assets/myImg.svg";
+
 function Hero() {
+  const textRef = useRef(null);
+  const imgRef = useRef(null);
+
+  useEffect(() => {
+    gsap.fromTo(
+      textRef.current,
+      { x: -100, opacity: 0 },
+      { x: 0, opacity: 1, duration: 1.5, ease: "power3.out" }
+    );
+    gsap.fromTo(
+      imgRef.current,
+      { x: 100, opacity: 0 },
+      { x: 0, opacity: 1, duration: 1.5, ease: "power3.out", delay: 0.1 }
+    );
+  }, []);
+
   return (
     <div className="min-h-screen ">
-         <div className="absolute inset-0">
-          <div className="absolute -top-40 -left-40 w-96 h-96 bg-gradient-to-r from-blue-500/5 via-purple-500/5 to-cyan-500/5 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute -top-20 -right-40 w-80 h-80 bg-gradient-to-r from-purple-500/5 via-pink-500/5 to-blue-500/5 rounded-full blur-3xl animate-pulse delay-1000"></div>
-          <div className="absolute -bottom-40 left-1/2 w-96 h-96 bg-gradient-to-r from-cyan-500/5 via-blue-500/5 to-purple-500/5 rounded-full blur-3xl animate-pulse delay-2000"></div>
+      <div className="absolute inset-0">
+        <div className="absolute -top-40 -left-40 w-96 h-96 bg-gradient-to-r from-blue-500/5 via-purple-500/5 to-cyan-500/5 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute -top-20 -right-40 w-80 h-80 bg-gradient-to-r from-purple-500/5 via-pink-500/5 to-blue-500/5 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        <div className="absolute -bottom-40 left-1/2 w-96 h-96 bg-gradient-to-r from-cyan-500/5 via-blue-500/5 to-purple-500/5 rounded-full blur-3xl animate-pulse delay-2000"></div>
 
-          {/* Floating particles */}
-          {[...Array(20)].map((_, i) => (
-            <div
-              key={i}
-              className="absolute w-1 h-1 bg-white rounded-full animate-ping"
-              style={{
-                top: `${Math.random() * 100}%`,
-                left: `${Math.random() * 100}%`,
-                animationDelay: `${Math.random() * 3}s`,
-                animationDuration: `${2 + Math.random() * 2}s`,
-              }}
-            />
-          ))}
-        </div>
-      {/* Background decorative elements */}
-      
+        {[...Array(20)].map((_, i) => (
+          <div
+            key={i}
+            className="absolute w-1 h-1 bg-white rounded-full animate-ping"
+            style={{
+              top: `${Math.random() * 100}%`,
+              left: `${Math.random() * 100}%`,
+              animationDelay: `${Math.random() * 3}s`,
+              animationDuration: `${2 + Math.random() * 2}s`,
+            }}
+          />
+        ))}
+      </div>
 
       <div className="relative z-10 pt-20 pb-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-[1600px] mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center min-h-[80vh]">
+            
             {/* Content Section */}
-            <div className="text-center lg:text-left space-y-8">
+            <div ref={textRef} className="text-center lg:text-left space-y-8">
               <div className="space-y-4">
                 <div className="inline-block">
                   <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent text-sm font-medium tracking-wider uppercase">
@@ -36,14 +53,14 @@ function Hero() {
                   </span>
                 </div>
 
-                <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-tight">
+                <h1 className="text-4xl font sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-tight">
                   Hi, <br /> I am Tawhidul Islam
                   <span className="block text-5xl mt-2 bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent">
                     Frontend Developer
                   </span>
                 </h1>
 
-                <p className="text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                <p className="text-lg font sm:text-xl text-gray-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
                   I'm a passionate developer with a knack for creating stunning web applications that combine beautiful
                   design with powerful functionality.
                 </p>
@@ -59,13 +76,12 @@ function Hero() {
                 </button>
               </div>
 
-              {/* Stats or highlights */}
+              {/* Stats */}
               <div className="grid grid-cols-6 gap-8 pt-8 ">
                 <div className="text-center lg:text-left">
                   <div className="text-2xl sm:text-3xl font-bold text-white">12+</div>
                   <div className="text-sm text-gray-400">Projects</div>
                 </div>
-               
                 <div className="text-center lg:text-left">
                   <div className="text-2xl sm:text-3xl font-bold text-white">100%</div>
                   <div className="text-sm text-gray-400">Satisfaction</div>
@@ -74,23 +90,19 @@ function Hero() {
             </div>
 
             {/* Image Section */}
-            <div className="relative flex justify-center lg:justify-end">
+            <div ref={imgRef} className="relative flex justify-center lg:justify-end">
               <div className="relative">
-                {/* Glowing background effect */}
                 <div className="absolute inset-0 bg-gradient-to-r from-red-500/20 to-blue-600/20 rounded-full blur-2xl scale-110"></div>
-
-                {/* Image container */}
-                <div className="relative  p-8 rounded-2xl  ">
-
-                      <img
-                  src={myImg}
-                  alt="Professional Developer Portrait"
-                  className="w-[600px] max-w-[750px] object-cover rounded-xl"
-                />
-                  
+                <div className="relative p-8 rounded-2xl">
+                  <img
+                    src={myImg}
+                    alt="Professional Developer Portrait"
+                    className="w-[500px] max-w-[750px] object-cover rounded-xl"
+                  />
                 </div>
               </div>
             </div>
+
           </div>
         </div>
       </div>
@@ -102,9 +114,9 @@ function Hero() {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 export default function Home() {
-  return <Hero />
+  return <Hero />;
 }

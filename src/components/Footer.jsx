@@ -100,7 +100,7 @@ function Footer() {
                         <div className="absolute inset-0 bg-gradient-to-r from-blue-500 via-purple-500 to-cyan-500 rounded-2xl blur-lg opacity-30"></div>
                       </div>
                       <div>
-                        <h3 className="text-2xl font-bold text-white">Tuhin Ahmed</h3>
+                        <h3 className="text-2xl font-bold text-white">Tawhidul Islam</h3>
                         <p className="text-gray-400 text-sm">Frontend Developer</p>
                       </div>
                     </div>
@@ -192,7 +192,7 @@ function Footer() {
                 <div className="flex flex-col md:flex-row justify-between items-center gap-6">
                   {/* Copyright */}
                   <div className="flex items-center gap-2 text-gray-400">
-                    <span>© {currentYear} Tuhin Ahmed. Made with</span>
+                    <span>© {currentYear} Tawhidul Islam. Made with</span>
                     <Heart className="w-4 h-4 text-red-400 animate-pulse" />
                     <span>and</span>
                     <Coffee className="w-4 h-4 text-orange-400" />

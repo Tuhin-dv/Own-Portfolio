@@ -1,4 +1,17 @@
+"use client"
+
+import { useEffect, useRef } from "react"
+import { gsap } from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
+
+// Register ScrollTrigger plugin
+gsap.registerPlugin(ScrollTrigger)
+
 const Skills = () => {
+  const sectionRef = useRef(null)
+  const headerRef = useRef(null)
+  const skillsRef = useRef([])
+
   const skills = [
     {
       name: "HTML",
@@ -56,11 +69,96 @@ const Skills = () => {
     },
   ]
 
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      // Header animation from left
+      gsap.fromTo(
+        headerRef.current,
+        {
+          x: -100,
+          opacity: 0,
+        },
+        {
+          x: 0,
+          opacity: 1,
+          duration: 1.2,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: headerRef.current,
+            start: "top 80%",
+            end: "bottom 20%",
+            toggleActions: "play none none reverse",
+          },
+        },
+      )
+
+      // Skills cards animation from right with stagger
+      gsap.fromTo(
+        skillsRef.current,
+        {
+          x: 100,
+          opacity: 0,
+          scale: 0.8,
+        },
+        {
+          x: 0,
+          opacity: 1,
+          scale: 1,
+          duration: 1,
+          ease: "power3.out",
+          stagger: 0.1,
+          scrollTrigger: {
+            trigger: ".skills-grid",
+            start: "top 80%",
+            end: "bottom 20%",
+            toggleActions: "play none none reverse",
+          },
+        },
+      )
+
+      // Floating animation for skill icons
+      skillsRef.current.forEach((skill, index) => {
+        if (skill) {
+          const icon = skill.querySelector(".skill-icon")
+          if (icon) {
+            gsap.to(icon, {
+              y: -10,
+              duration: 2 + index * 0.1,
+              ease: "power2.inOut",
+              yoyo: true,
+              repeat: -1,
+            })
+          }
+        }
+      })
+    }, sectionRef)
+
+    return () => ctx.revert()
+  }, [])
+
   return (
-    <section className="py-16 px-4  min-h-screen">
-      <div className="max-w-[1600px] mx-auto">
+    <section ref={sectionRef} className="py-16 px-4  min-h-screen relative overflow-hidden">
+      <div className="absolute inset-0">
+       
+
+        {/* Floating particles */}
+        {[...Array(15)].map((_, i) => (
+          <div
+            key={i}
+            className="absolute w-1 h-1 bg-white/30 rounded-full animate-ping"
+            style={{
+              top: `${Math.random() * 100}%`,
+              left: `${Math.random() * 100}%`,
+              animationDelay: `${Math.random() * 3}s`,
+              animationDuration: `${2 + Math.random() * 2}s`,
+            }}
+          />
+        ))}
+      </div>
+
+      <div className="relative z-10">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div ref={headerRef} className="text-center mb-16">
           <h2 className="text-5xl font-bold text-white mb-6">Technical Skills</h2>
           <p className="text-gray-300 text-xl max-w-3xl mx-auto leading-relaxed">
             Crafting modern web experiences with cutting-edge technologies and professional expertise
@@ -68,54 +166,54 @@ const Skills = () => {
         </div>
 
         {/* Skills Grid */}
-      <div className="max-w-[1600px] mx-auto grid md:grid-cols-3 w-full gap-8">
-  {skills.map((skill, index) => (
-    <div key={index} className="relative group">
-      <div
-        className={`absolute inset-0 bg-gradient-to-r ${skill.bgColor} rounded-3xl blur-xl opacity-0 group-hover:opacity-30 transition-opacity duration-700`}
-      ></div>
+        <div className="skills-grid grid md:grid-cols-3 gap-8">
+          {skills.map((skill, index) => (
+            <div key={index} ref={(el) => (skillsRef.current[index] = el)} className="relative group">
+              <div
+                className={`absolute inset-0 bg-gradient-to-r ${skill.bgColor} rounded-3xl blur-xl opacity-0 group-hover:opacity-30 transition-opacity duration-700`}
+              ></div>
 
-      <div className="relative bg-white/5 backdrop-blur-2xl border border-white/10 rounded-3xl p-10 hover:bg-white/10 hover:border-white/20 transition-all duration-700 group hover:scale-105">
-        
-        {/* Skill Icon */}
-        <div className="relative mb-8">
-          <div
-            className={`w-16 h-16 bg-gradient-to-r ${skill.bgColor} backdrop-blur-xl border border-white/20 rounded-2xl flex items-center justify-center mb-4`}
-          >
-            <img
-              src={skill.logo || "/placeholder.svg"}
-              alt={`${skill.name} logo`}
-              className="w-8 h-8 object-contain"
-            />
-          </div>
-          <div
-            className={`absolute inset-0 bg-gradient-to-r ${skill.bgColor} rounded-2xl blur-lg opacity-30 group-hover:opacity-60 transition-opacity duration-500`}
-          ></div>
+              <div className="relative bg-white/5 backdrop-blur-2xl border border-white/10 rounded-3xl p-10 hover:bg-white/10 hover:border-white/20 transition-all duration-700 group hover:scale-105">
+                {/* Skill Icon */}
+                <div className="relative mb-8">
+                  <div
+                    className={`skill-icon w-16 h-16 bg-gradient-to-r ${skill.bgColor} backdrop-blur-xl border border-white/20 rounded-2xl flex items-center justify-center mb-4 relative`}
+                  >
+                    <img
+                      src={skill.logo || "/placeholder.svg"}
+                      alt={`${skill.name} logo`}
+                      className="w-8 h-8 object-contain relative z-10"
+                    />
+                    <div className="absolute inset-0 rounded-2xl border-2 border-transparent bg-gradient-to-r from-white/20 via-transparent to-white/20 animate-spin opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  </div>
+                  <div
+                    className={`absolute inset-0 bg-gradient-to-r ${skill.bgColor} rounded-2xl blur-lg opacity-30 group-hover:opacity-60 transition-opacity duration-500`}
+                  ></div>
+                </div>
+
+                {/* Skill Content */}
+                <h3 className="text-2xl font-bold text-white font mb-4">{skill.name}</h3>
+                <p className="text-gray-300 leading-relaxed mb-8">
+                  {skill.category === "Frontend"
+                    ? "Building responsive and interactive user interfaces with modern design principles"
+                    : "Developing robust server-side applications and database management solutions"}
+                </p>
+
+                {/* Skill Level */}
+                <div className="space-y-3">
+                  <div className="flex items-center gap-3">
+                    <div className="w-4 h-4 rounded-full bg-green-400 animate-pulse"></div>
+                    <span className="text-gray-300 text-sm">Professional Level</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <div className="w-4 h-4 rounded-full bg-blue-400"></div>
+                    <span className="text-gray-300 text-sm">{skill.category} Technology</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
-
-        {/* Skill Content */}
-        <h3 className="text-2xl font-bold text-white mb-4">{skill.name}</h3>
-        <p className="text-gray-300 leading-relaxed mb-8">
-          {skill.category === "Frontend"
-            ? "Building responsive and interactive user interfaces with modern design principles"
-            : "Developing robust server-side applications and database management solutions"}
-        </p>
-
-        {/* Skill Level */}
-        <div className="space-y-3">
-          <div className="flex items-center gap-3">
-            <div className="w-4 h-4 rounded-full bg-green-400 animate-pulse"></div>
-            <span className="text-gray-300 text-sm">Professional Level</span>
-          </div>
-          <div className="flex items-center gap-3">
-            <div className="w-4 h-4 rounded-full bg-blue-400"></div>
-            <span className="text-gray-300 text-sm">{skill.category} Technology</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  ))}
-</div>
 
       </div>
     </section>

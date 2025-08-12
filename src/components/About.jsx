@@ -16,15 +16,7 @@ const About = () => {
     return () => clearInterval(skillInterval)
   }, [])
 
-  const skills = [
-    { name: "HTML", level: 95, color: "from-orange-500 to-red-500" },
-    { name: "CSS", level: 90, color: "from-blue-500 to-cyan-500" },
-    { name: "Tailwind", level: 95, color: "from-cyan-500 to-blue-500" },
-    { name: "JavaScript", level: 85, color: "from-yellow-500 to-orange-500" },
-    { name: "React", level: 90, color: "from-blue-400 to-cyan-400" },
-    { name: "Firebase", level: 80, color: "from-yellow-400 to-red-500" },
-    { name: "Git", level: 85, color: "from-gray-500 to-gray-700" },
-  ]
+
 
   const achievements = [
     { icon: Code2, title: "1+ Years", subtitle: "Frontend Experience", color: "text-blue-400" },
@@ -94,19 +86,19 @@ const About = () => {
             {/* section-title====================================== */}
 
             <h2 className="text-5xl md:text-6xl font-bold mb-8 group relative">
-              <span className="bg-gradient-to-r  from-white via-gray-100 to-gray-300 bg-clip-text text-transparent group-hover:from-blue-200 group-hover:via-purple-200 group-hover:to-cyan-200 transition-all duration-700 drop-shadow-2xl">
+              <span className="bg-gradient-to-r font  from-white via-gray-100 to-gray-300 bg-clip-text text-transparent group-hover:from-blue-200 group-hover:via-purple-200 group-hover:to-cyan-200 transition-all duration-700 drop-shadow-2xl">
                 About Me
               </span>
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-cyan-500/20 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
             </h2>
 
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl font text-gray-300 max-w-3xl mx-auto leading-relaxed">
               Get to know who I am, what I do, and the passion that drives my work
             </p>
           </div>
 
           {/* Main Content Grid */}
-          <div className="grid lg:grid-cols-2 gap-12 items-start">
+          <div className=" space-y-8 items-start">
             {/* Left Column - Story */}
             <div
               className={`transform transition-all duration-1000 delay-300 ${isVisible ? "translate-x-0 opacity-100" : "-translate-x-10 opacity-0"
@@ -126,20 +118,20 @@ const About = () => {
                       </div>
                       <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-2xl blur-lg opacity-30 group-hover:opacity-60 transition-opacity duration-500"></div>
                     </div>
-                    <h3 className="text-3xl font-bold text-white">My Story</h3>
+                    <h3 className="text-3xl font-bold text-white font">My Story</h3>
                   </div>
 
-                  <p className="text-lg text-gray-200 leading-relaxed mb-8">
+                  <p className="text-lg font text-gray-200 leading-relaxed mb-8">
                     I'm{" "}
                     <span className="text-transparent bg-gradient-to-r from-blue-300 to-purple-300 bg-clip-text font-bold text-xl">
-                      Tuhin Ahmed
+                     Tawhidul Islam
                     </span>
                     , a passionate frontend developer from Bangladesh. I specialize in creating
                     <span className="text-cyan-300 font-semibold"> responsive, dynamic, and interactive websites</span>{" "}
                     using cutting-edge technologies.
                   </p>
 
-                  <p className="text-gray-300 leading-relaxed mb-10">
+                  <p className="text-gray-300 font leading-relaxed mb-10">
                     My journey in web development started with curiosity and has evolved into a passion for crafting
                     digital experiences that not only look stunning but also provide exceptional user experiences. I
                     believe in writing clean, maintainable code and staying updated with the latest industry trends.
@@ -176,60 +168,7 @@ const About = () => {
               className={`transform transition-all duration-1000 delay-500 ${isVisible ? "translate-x-0 opacity-100" : "translate-x-10 opacity-0"
                 }`}
             >
-              {/* Glass Skills Section */}
-              <div className="relative group mb-8">
-                <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 via-cyan-500/20 to-blue-500/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-
-                <div className="relative bg-white/5 backdrop-blur-2xl border border-white/10 rounded-3xl p-10 shadow-2xl hover:bg-white/10 hover:border-white/20 transition-all duration-700">
-                  <div className="flex items-center gap-5 mb-10">
-                    <div className="relative">
-                      <div className="w-14 h-14 bg-gradient-to-r from-purple-500/20 to-cyan-500/20 backdrop-blur-xl border border-white/20 rounded-2xl flex items-center justify-center">
-                        <Code2 className="w-7 h-7 text-white" />
-                      </div>
-                      <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-2xl blur-lg opacity-30 group-hover:opacity-60 transition-opacity duration-500"></div>
-                    </div>
-                    <h3 className="text-3xl font-bold text-white">Technical Skills</h3>
-                  </div>
-
-                  <div className="space-y-8">
-                    {skills.map((skill, index) => (
-                      <div key={skill.name} className="group/skill">
-                        <div className="flex justify-between items-center mb-3">
-                          <span
-                            className={`font-semibold text-lg ${activeSkill === index ? "text-white" : "text-gray-200"} transition-colors duration-300`}
-                          >
-                            {skill.name}
-                          </span>
-                          <span
-                            className={`text-sm font-medium ${activeSkill === index ? "text-white" : "text-gray-300"} transition-colors duration-300`}
-                          >
-                            {skill.level}%
-                          </span>
-                        </div>
-                        <div className="relative">
-                          <div className="w-full bg-white/10 backdrop-blur-xl rounded-full h-3 overflow-hidden border border-white/20">
-                            <div
-                              className={`h-full bg-gradient-to-r ${skill.color} rounded-full transition-all duration-1000 relative ${activeSkill === index ? "animate-pulse shadow-lg" : ""
-                                }`}
-                              style={{
-                                width: `${skill.level}%`,
-                                transform: activeSkill === index ? "scaleY(1.1)" : "scaleY(1)",
-                              }}
-                            >
-                              <div className="absolute inset-0 bg-white/20 rounded-full"></div>
-                            </div>
-                          </div>
-                          {activeSkill === index && (
-                            <div
-                              className={`absolute inset-0 bg-gradient-to-r ${skill.color} rounded-full blur-md opacity-50 animate-pulse`}
-                            ></div>
-                          )}
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
+             
 
               {/* Glass Achievements Grid */}
               <div className="grid grid-cols-2 gap-6">
