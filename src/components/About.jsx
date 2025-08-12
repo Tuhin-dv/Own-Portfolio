@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { Code2, Palette, Rocket, Users, Coffee, ArrowRight, Download, CheckCircle, Star } from "lucide-react"
+import { Code2, Palette, Rocket, Users, Coffee, ArrowRight, CheckCircle } from "lucide-react"
 import { Link } from "react-router"
 
 const About = () => {
@@ -16,17 +16,15 @@ const About = () => {
     return () => clearInterval(skillInterval)
   }, [])
 
-
-
   const achievements = [
-    { icon: Code2, title: "1+ Years", subtitle: "Frontend Experience", color: "text-blue-400" },
-    { icon: Rocket, title: "10+", subtitle: "Projects Completed", color: "text-purple-400" },
-    { icon: Users, title: "5+", subtitle: "Happy Clients", color: "text-green-400" },
+    { icon: Code2, title: "6+ Months", subtitle: "Frontend Development Journey", color: "text-blue-400" },
+    { icon: Rocket, title: "13+", subtitle: "Projects Built for Practice", color: "text-purple-400" },
+    { icon: Users, title: "1260+", subtitle: "Hours of Learning & Coding", color: "text-green-400" },
     { icon: Coffee, title: "100+", subtitle: "Cups of Coffee", color: "text-orange-400" },
   ]
 
   return (
-    <div className="min-h-screen pt-8 bg-black relative overflow-hidden">
+    <div className="min-h-screen pt-8 bg-gradient-to-r from-black/25 to-black/50 via-transparent relative overflow-hidden">
       {/* Enhanced Background Effects */}
       <div className="absolute inset-0">
         {/* Large glowing orbs */}
@@ -69,24 +67,15 @@ const About = () => {
       </div>
 
       <div className="relative z-10 px-4 py-20">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-[1600px] mx-auto">
           {/* Header Section */}
           <div
-            className={`text-center mb-20 transform transition-all duration-1000 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
-              }`}
+            className={`text-center mb-20 transform transition-all duration-1000 ${
+              isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+            }`}
           >
-            {/* Glass Status Badge */}
-            {/* <div className="inline-flex items-center gap-3 bg-white/5 backdrop-blur-2xl border border-white/10 px-8 py-4 rounded-full mb-8 group hover:bg-white/10 hover:border-white/20 transition-all duration-500 shadow-2xl">
-              <Star className="w-5 h-5 text-yellow-400 animate-pulse" />
-              <span className="text-gray-200 font-medium text-lg">About Me</span>
-              <div className="w-3 h-3 bg-green-400 rounded-full animate-ping"></div>
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-cyan-500/10 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-            </div> */}
-
-            {/* section-title====================================== */}
-
             <h2 className="text-5xl md:text-6xl font-bold mb-8 group relative">
-              <span className="bg-gradient-to-r font  from-white via-gray-100 to-gray-300 bg-clip-text text-transparent group-hover:from-blue-200 group-hover:via-purple-200 group-hover:to-cyan-200 transition-all duration-700 drop-shadow-2xl">
+              <span className="bg-gradient-to-r font from-white via-gray-100 to-gray-300 bg-clip-text text-transparent group-hover:from-blue-200 group-hover:via-purple-200 group-hover:to-cyan-200 transition-all duration-700 drop-shadow-2xl">
                 About Me
               </span>
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-cyan-500/20 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
@@ -98,11 +87,12 @@ const About = () => {
           </div>
 
           {/* Main Content Grid */}
-          <div className=" space-y-8 items-start">
+          <div className="space-y-8 items-start">
             {/* Left Column - Story */}
             <div
-              className={`transform transition-all duration-1000 delay-300 ${isVisible ? "translate-x-0 opacity-100" : "-translate-x-10 opacity-0"
-                }`}
+              className={`transform transition-all duration-1000 delay-300 ${
+                isVisible ? "translate-x-0 opacity-100" : "-translate-x-10 opacity-0"
+              }`}
             >
               {/* Glass Story Card */}
               <div className="relative group">
@@ -122,25 +112,28 @@ const About = () => {
                   </div>
 
                   <p className="text-lg font text-gray-200 leading-relaxed mb-8">
-                    I'm{" "}
+                    Hello! I'm{" "}
                     <span className="text-transparent bg-gradient-to-r from-blue-300 to-purple-300 bg-clip-text font-bold text-xl">
-                     Tawhidul Islam
+                      Tawhidul Islam
                     </span>
-                    , a passionate frontend developer from Bangladesh. I specialize in creating
-                    <span className="text-cyan-300 font-semibold"> responsive, dynamic, and interactive websites</span>{" "}
-                    using cutting-edge technologies.
+                    , a frontend developer from Bangladesh. My programming journey began with curiosity about how websites work, and over time it has grown into a deep passion for building beautiful and functional web experiences.
+                  </p>
+
+                  <p className="text-gray-300 font leading-relaxed mb-6">
+                    I especially enjoy crafting interactive, user-friendly interfaces that bring ideas to life on the screen. Working with modern frontend tools and frameworks gives me the chance to combine creativity and technology in ways that truly excite me.
+                  </p>
+
+                  <p className="text-gray-300 font leading-relaxed mb-6">
+                    Outside of coding, I love playing football to keep active and painting as a way to relax and express my creativity. These hobbies help me maintain balance and inspiration in my daily life.
                   </p>
 
                   <p className="text-gray-300 font leading-relaxed mb-10">
-                    My journey in web development started with curiosity and has evolved into a passion for crafting
-                    digital experiences that not only look stunning but also provide exceptional user experiences. I
-                    believe in writing clean, maintainable code and staying updated with the latest industry trends.
+                    I'm someone who values continuous learning, embraces challenges, and always approaches my work with enthusiasm and a positive attitude. I believe every project is an opportunity to grow and create something meaningful.
                   </p>
 
                   {/* Key Points with glass effect */}
                   <div className="space-y-5">
                     {[
-                      "Strong understanding of UI/UX principles",
                       "Experience with modern React ecosystem",
                       "Passionate about responsive design",
                       "Always learning new technologies",
@@ -165,11 +158,10 @@ const About = () => {
 
             {/* Right Column - Skills & Stats */}
             <div
-              className={`transform transition-all duration-1000 delay-500 ${isVisible ? "translate-x-0 opacity-100" : "translate-x-10 opacity-0"
-                }`}
+              className={`transform transition-all duration-1000 delay-500 ${
+                isVisible ? "translate-x-0 opacity-100" : "translate-x-10 opacity-0"
+              }`}
             >
-             
-
               {/* Glass Achievements Grid */}
               <div className="grid grid-cols-2 gap-6">
                 {achievements.map((achievement, index) => (
@@ -196,15 +188,16 @@ const About = () => {
 
           {/* Glass CTA Section */}
           <div
-            className={`text-center mt-24 transform transition-all duration-1000 delay-700 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
-              }`}
+            className={`text-center mt-24 transform transition-all duration-1000 delay-700 ${
+              isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+            }`}
           >
             <div className="flex flex-col sm:flex-row gap-8 justify-center">
               {/* Primary Glass Button */}
               <div className="relative group">
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600 rounded-2xl blur-xl opacity-50 group-hover:opacity-100 transition-opacity duration-500"></div>
 
-                <Link to='/resume'>
+                <Link to="/resume">
                   <button className="relative bg-gradient-to-r from-blue-600/20 via-purple-600/20 to-cyan-600/20 backdrop-blur-2xl border border-white/20 text-white px-12 py-5 rounded-2xl font-bold text-xl hover:bg-gradient-to-r hover:from-blue-600/30 hover:via-purple-600/30 hover:to-cyan-600/30 hover:border-white/30 transform hover:-translate-y-3 hover:scale-105 transition-all duration-500 flex items-center justify-center gap-4 shadow-2xl">
                     <span className="relative z-10">View My Resume</span>
                     <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform duration-300 relative z-10" />

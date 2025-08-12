@@ -39,9 +39,7 @@ const Resume = () => {
   const experiences = [
     {
       title: "Frontend Developer",
-      company: "Freelance",
       period: "Jan 2024 – Present",
-      location: "Remote",
       description:
         "Developed responsive websites using React, Tailwind CSS, and Firebase. Created modern UI components and deployed applications on Vercel with optimal performance.",
       achievements: [
@@ -56,9 +54,9 @@ const Resume = () => {
   const education = [
     {
       degree: "Diploma in Computer Science",
-      institution: "XYZ Polytechnic Institute",
+      institution: "Eliyaskona Goprekhi Technical School & College",
       period: "2022 – 2024",
-      location: "Dhaka, Bangladesh",
+      location: "Sirajganj, Belkuchi",
       description:
         "Comprehensive study of web development fundamentals, data structures, algorithms, and completed multiple real-world projects.",
       highlights: [
@@ -71,7 +69,7 @@ const Resume = () => {
   ]
 
   return (
-    <div className="min-h-screen pt-8 bg-black relative overflow-hidden">
+    <div className="min-h-screen pt-8 bg-gradient-to-r from-black/25 to-black/50 via-transparent relative overflow-hidden">
       {/* Enhanced Background Effects */}
       <div className="absolute inset-0">
         <div className="absolute -top-40 -left-40 w-96 h-96 bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-cyan-500/10 rounded-full blur-3xl animate-pulse"></div>
@@ -94,28 +92,23 @@ const Resume = () => {
       </div>
 
       <div className="relative z-10 px-4 py-20">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-[1600px] mx-auto">
           {/* Header Section */}
           <div
             className={`text-center mb-20 transform transition-all duration-1000 ${
               isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
             }`}
           >
-            {/* Glass Status Badge */}
-            {/* <div className="inline-flex items-center gap-3 bg-white/5 backdrop-blur-2xl border border-white/10 px-8 py-4 rounded-full mb-8 group hover:bg-white/10 hover:border-white/20 transition-all duration-500 shadow-2xl">
-              <Award className="w-5 h-5 text-yellow-400 animate-pulse" />
-              <span className="text-gray-200 font-medium text-lg">Professional Resume</span>
-              <div className="w-3 h-3 bg-green-400 rounded-full animate-ping"></div>
-            </div> */}
+          
 
             <h2 className="text-5xl md:text-6xl font-bold mb-8 group relative">
-              <span className="bg-gradient-to-r from-white via-gray-100 to-gray-300 bg-clip-text text-transparent group-hover:from-blue-200 group-hover:via-purple-200 group-hover:to-cyan-200 transition-all duration-700 drop-shadow-2xl">
-                Resume
+              <span className="bg-gradient-to-r font from-white via-gray-100 to-gray-300 bg-clip-text text-transparent group-hover:from-blue-200 group-hover:via-purple-200 group-hover:to-cyan-200 transition-all duration-700 drop-shadow-2xl">
+                Resume 
               </span>
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-cyan-500/20 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
             </h2>
 
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed mb-10">
+            <p className="text-xl font text-gray-300 max-w-3xl mx-auto leading-relaxed mb-10">
               Here's what I've accomplished so far in my journey as a frontend developer
             </p>
 
@@ -175,8 +168,8 @@ const Resume = () => {
                               <div className="flex items-center gap-4 text-gray-300">
                                 <span className="text-lg font-semibold text-blue-400">{exp.company}</span>
                                 <div className="flex items-center gap-2">
-                                  <MapPin className="w-4 h-4" />
-                                  <span>{exp.location}</span>
+                              
+                                
                                 </div>
                               </div>
                             </div>

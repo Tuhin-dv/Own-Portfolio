@@ -12,62 +12,72 @@ const Skills = () => {
   const headerRef = useRef(null)
   const skillsRef = useRef([])
 
-  const skills = [
-    {
-      name: "HTML",
-      logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/attachments/gen-images/public/html5-logo-EG9Yx6FBYiVXgSURarfio9AVxETBHL.png",
-      bgColor: "from-orange-500 to-red-500",
-      category: "Frontend",
-    },
-    {
-      name: "CSS",
-      logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/attachments/gen-images/public/css3-official-logo-blue-9QD3o1QCnvCyPMoX2FQw6Ibk3USDjC.png",
-      bgColor: "from-blue-500 to-blue-600",
-      category: "Frontend",
-    },
-    {
-      name: "Tailwind CSS",
-      logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/attachments/gen-images/public/tailwind-css-cyan-logo-cCt4sDJU2Z7jNU8ncedNryBafHXh5i.png",
-      bgColor: "from-cyan-400 to-blue-500",
-      category: "Frontend",
-    },
-    {
-      name: "JavaScript",
-      logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/attachments/gen-images/public/javascript-official-logo-eovYj1G6Anv2GEGeBR2u8HGhouprBk.png",
-      bgColor: "from-yellow-400 to-orange-500",
-      category: "Frontend",
-    },
-    {
-      name: "React.js",
-      logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/attachments/gen-images/public/react-blue-logo-HMSJ0LaOFCNQoCFqecmdwU7wzmEpMC.png",
-      bgColor: "from-blue-400 to-cyan-500",
-      category: "Frontend",
-    },
-    {
-      name: "Next.js",
-      logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/attachments/gen-images/public/nextjs-bw-logo-obuaWZ4ctsZsn3wtNwwzsbcEJx09vo.png",
-      bgColor: "from-gray-700 to-gray-900",
-      category: "Frontend",
-    },
-    {
-      name: "Node.js",
-      logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/attachments/gen-images/public/nodejs-green-logo-HZr6UFV65pCJ2cnqmXjJz164mRvJsR.png",
-      bgColor: "from-green-500 to-green-600",
-      category: "Backend",
-    },
-    {
-      name: "Express",
-      logo: "https://w7.pngwing.com/pngs/925/447/png-transparent-express-js-node-js-javascript-mongodb-node-js-text-trademark-logo-thumbnail.png",
-      bgColor: "from-gray-600 to-gray-800",
-      category: "Backend",
-    },
-    {
-      name: "MongoDB",
-      logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/attachments/gen-images/public/mongodb-green-logo-lnbnEge6TpOYk1P2wuJLnvNsqOhWGU.png",
-      bgColor: "from-green-400 to-green-600",
-      category: "Backend",
-    },
-  ]
+const skills = [
+  {
+    name: "HTML",
+    logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/attachments/gen-images/public/html5-logo-EG9Yx6FBYiVXgSURarfio9AVxETBHL.png",
+    bgColor: "from-orange-500 to-red-500",
+    category: "Frontend",
+    description: "Markup language for structuring web content",
+  },
+  {
+    name: "CSS",
+    logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/attachments/gen-images/public/css3-official-logo-blue-9QD3o1QCnvCyPMoX2FQw6Ibk3USDjC.png",
+    bgColor: "from-blue-500 to-blue-600",
+    category: "Frontend",
+    description: "Styling language to design beautiful web pages",
+  },
+  {
+    name: "Tailwind CSS",
+    logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/attachments/gen-images/public/tailwind-css-cyan-logo-cCt4sDJU2Z7jNU8ncedNryBafHXh5i.png",
+    bgColor: "from-cyan-400 to-blue-500",
+    category: "Frontend",
+    description: "Utility-first CSS framework for rapid UI development",
+  },
+  {
+    name: "JavaScript",
+    logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/attachments/gen-images/public/javascript-official-logo-eovYj1G6Anv2GEGeBR2u8HGhouprBk.png",
+    bgColor: "from-yellow-400 to-orange-500",
+    category: "Frontend",
+    description: "Programming language for dynamic and interactive web",
+  },
+  {
+    name: "React.js",
+    logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/attachments/gen-images/public/react-blue-logo-HMSJ0LaOFCNQoCFqecmdwU7wzmEpMC.png",
+    bgColor: "from-blue-400 to-cyan-500",
+    category: "Frontend",
+    description: "Library for building user interfaces with components",
+  },
+  {
+    name: "Next.js",
+    logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/attachments/gen-images/public/nextjs-bw-logo-obuaWZ4ctsZsn3wtNwwzsbcEJx09vo.png",
+    bgColor: "from-gray-700 to-gray-900",
+    category: "Frontend",
+    description: "React framework for server-side rendering and routing",
+  },
+  {
+    name: "Node.js",
+    logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/attachments/gen-images/public/nodejs-green-logo-HZr6UFV65pCJ2cnqmXjJz164mRvJsR.png",
+    bgColor: "from-green-500 to-green-600",
+    category: "Backend",
+    description: "JavaScript runtime to build scalable backend servers",
+  },
+  {
+    name: "Express",
+    logo: "https://w7.pngwing.com/pngs/925/447/png-transparent-express-js-node-js-javascript-mongodb-node-js-text-trademark-logo-thumbnail.png",
+    bgColor: "from-gray-600 to-gray-800",
+    category: "Backend",
+    description: "Minimal web framework for Node.js to build APIs",
+  },
+  {
+    name: "MongoDB",
+    logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/attachments/gen-images/public/mongodb-green-logo-lnbnEge6TpOYk1P2wuJLnvNsqOhWGU.png",
+    bgColor: "from-green-400 to-green-600",
+    category: "Backend",
+    description: "NoSQL database for flexible and scalable data storage",
+  },
+]
+
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -194,9 +204,7 @@ const Skills = () => {
                 {/* Skill Content */}
                 <h3 className="text-2xl font-bold text-white font mb-4">{skill.name}</h3>
                 <p className="text-gray-300 leading-relaxed mb-8">
-                  {skill.category === "Frontend"
-                    ? "Building responsive and interactive user interfaces with modern design principles"
-                    : "Developing robust server-side applications and database management solutions"}
+                {skill.description}
                 </p>
 
                 {/* Skill Level */}

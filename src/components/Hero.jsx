@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import myImg from "../assets/myImg.svg";
+import { Link } from "react-router";
 
 function Hero() {
   const textRef = useRef(null);
@@ -68,9 +69,11 @@ function Hero() {
 
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+              <Link to='/projects'>
                 <button className="bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600 text-white font-semibold py-4 px-8 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-purple-500/25">
                   View My Work
                 </button>
+              </Link>
                 <button className="border-2 border-gray-600 hover:border-purple-400 text-gray-300 hover:text-white font-semibold py-4 px-8 rounded-full transition-all duration-300 hover:bg-purple-500/10">
                   Get In Touch
                 </button>

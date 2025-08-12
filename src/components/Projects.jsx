@@ -8,39 +8,33 @@ const projects = [
     name: "Globallern - Language Tutor Booking",
     description:
       "A comprehensive language tutoring platform featuring JWT authentication, advanced tutor booking system, and interactive review management.",
-    image: "https://i.ibb.co/xSf2T4f8/Screenshot-48.png",
-    tech: ["React", "Node.js", "MongoDB", "JWT", "Tailwind"],
-    live: "https://globallearn-4c354.web.app/",
-    github: "https://github.com/yourname/globallern",
+    image: "https://i.ibb.co.com/3Yh6yZnb/Screenshot-5.png",
+    live: "https://eclectic-lolly-0cf089.netlify.app/",
+    github: "https://github.com/Tuhin-dv/Global-Learn",
     status: "Live",
-    category: "Full Stack",
-    features: ["User Authentication", "Booking System", "Review Management", "Payment Integration"],
+  
     stats: { views: "2.5K", stars: "45", forks: "12" },
   },
   {
-    name: "ParcelPro - Parcel Delivery",
+    name: "JobTrack",
     description:
-      "Advanced parcel tracking system with real-time delivery updates, region management, and comprehensive booking status monitoring.",
-    image: "https://i.ibb.co/G49vTSrY/Screenshot-50.png",
-    tech: ["React", "Express", "MongoDB", "ShadCN UI"],
+      "A user-friendly job portal where users can search for jobs, view detailed listings by region, and apply directly through the platform with real-time application status tracking.",
+    image: "https://i.ibb.co.com/MrYCQc6/Screenshot-4.png",
     live: "https://jade-lokum-8eff88.netlify.app/",
-    github: "https://github.com/yourname/parcelpro",
+    github: "https://github.com/Tuhin-dv/JobTrack",
     status: "Live",
-    category: "Web App",
-    features: ["Real-time Tracking", "Region Management", "Status Updates", "Admin Dashboard"],
+   
     stats: { views: "1.8K", stars: "32", forks: "8" },
   },
   {
-    name: "E-Commerce Platform",
+    name: "UniScholarship",
     description:
-      "Modern e-commerce solution with shopping cart, payment processing, inventory management, and comprehensive admin panel.",
-    image: "https://i.ibb.co/6ccCmnkm/Screenshot-51.png",
-    tech: ["Next.js", "Stripe", "PostgreSQL", "Prisma", "TypeScript"],
-    live: "https://example-ecommerce.com",
-    github: "https://github.com/yourname/ecommerce",
+      "A comprehensive scholarship management system that allows students to browse and apply for scholarships, track application status, and receive feedback. Includes secure payment integration, role-based dashboards for admins and moderators, and an intuitive interface for easy scholarship management.",
+    image: "https://i.ibb.co.com/QvGVGQ1c/Screenshot-2.png",
+    live: "https://unischolar-5a13a.web.app/",
+    github: "https://github.com/Tuhin-dv/UniScholarship",
     status: "In Progress",
-    category: "E-Commerce",
-    features: ["Shopping Cart", "Payment Gateway", "Inventory System", "Order Management"],
+   
     stats: { views: "3.2K", stars: "67", forks: "18" },
   },
 ]
@@ -62,7 +56,7 @@ const Projects = () => {
   const filteredProjects = filter === "All" ? projects : projects.filter((project) => project.category === filter)
 
   return (
-    <section id="projects" className="py-20   bg-black relative overflow-hidden">
+    <section id="projects" className="py-20   bg-gradient-to-r from-black/25 to-black/50 via-transparent relative overflow-hidden">
       {/* Background Effects */}
       <div className="absolute inset-0">
         <div className="absolute -top-40 -left-40 w-96 h-96 bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-cyan-500/10 rounded-full blur-3xl animate-pulse"></div>
@@ -92,7 +86,7 @@ const Projects = () => {
           }`}
         >
           <h2 className="text-5xl md:text-6xl font-bold mb-6 group">
-            <span className="bg-clip-text text-transparent text-white group-hover:to-gray-800 transition-all duration-500">
+            <span className="bg-clip-text font text-transparent text-white group-hover:to-gray-800 transition-all duration-500">
               My Projects
             </span>
           </h2>
@@ -139,10 +133,7 @@ const Projects = () => {
                   </div>
 
                   {/* Category Badge */}
-                  <div className="absolute top-4 left-4 px-3 py-2 rounded-full text-xs font-medium bg-black text-blue-300 border border-blue-400/40 backdrop-blur-xl">
-                    {project.category}
-                  </div>
-
+                
                   {/* Overlay Buttons */}
                   <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
                     <a
@@ -167,39 +158,16 @@ const Projects = () => {
                 {/* Content */}
                 <div className="p-8 flex-grow flex flex-col justify-between">
                   <div>
-                    <h3 className="text-xl font-bold text-white mb-3 group-hover:text-blue-300 transition-colors duration-300">
+                    <h3 className="text-xl font-bold text-white mb-3 font group-hover:text-blue-300 transition-colors duration-300">
                       {project.name}
                     </h3>
-                    <p className="text-gray-300 leading-relaxed mb-6 text-sm group-hover:text-gray-200 transition-colors duration-300">
+                    <p className="text-gray-300 font leading-relaxed mb-6 text-sm group-hover:text-gray-200 transition-colors duration-300">
                       {project.description}
                     </p>
 
-                    {/* Features */}
-                    <div className="mb-6">
-                      <h4 className="text-sm font-semibold text-gray-400 mb-3">Key Features:</h4>
-                      <div className="grid grid-cols-2 gap-2">
-                        {project.features.map((feature, featureIndex) => (
-                          <div key={featureIndex} className="flex items-center gap-2 text-xs">
-                            <div className="w-1.5 h-1.5 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full"></div>
-                            <span className="text-gray-400 group-hover:text-gray-300 transition-colors duration-300">
-                              {feature}
-                            </span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
+                 
 
-                    {/* Tech Stack */}
-                    <div className="flex flex-wrap gap-2 mb-6">
-                      {project.tech.map((tech, techIndex) => (
-                        <span
-                          key={techIndex}
-                          className="text-xs px-3 py-1 rounded-full bg-slate-800/60 border border-slate-700/50 text-gray-300 hover:bg-blue-500/20 hover:border-blue-400/50 hover:text-blue-300 transition-all duration-300"
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
+                
                   </div>
 
                   {/* Footer: Stats + Links */}

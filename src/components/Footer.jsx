@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from "react"
-import { Github, Linkedin, Twitter, Mail, Heart, Code2, Coffee, Star, Sparkles } from "lucide-react"
+import { Github, Linkedin, Twitter, Mail, Heart, Code2, Coffee, Star, Sparkles, Facebook } from "lucide-react"
 
 function Footer() {
   const [currentYear, setCurrentYear] = useState(new Date().getFullYear())
@@ -14,28 +14,23 @@ function Footer() {
   const socialLinks = [
     {
       icon: Github,
-      href: "#",
+      href: "https://github.com/Tuhin-dv",
       label: "GitHub",
       color: "hover:text-gray-300 hover:bg-gray-600/20",
     },
     {
       icon: Linkedin,
-      href: "#",
+      href: "https://www.linkedin.com/in/tawhidul-islam-dev/",
       label: "LinkedIn",
       color: "hover:text-blue-400 hover:bg-blue-600/20",
     },
-    {
-      icon: Twitter,
-      href: "#",
-      label: "Twitter",
-      color: "hover:text-cyan-400 hover:bg-cyan-600/20",
-    },
-    {
-      icon: Mail,
-      href: "mailto:tuhin@example.com",
-      label: "Email",
-      color: "hover:text-purple-400 hover:bg-purple-600/20",
-    },
+      {
+      icon: Facebook,
+      label: "Facebook",
+      href: "https://www.facebook.com/Tawhidul.dev",
+      color: "hover:bg-cyan-600 hover:border-cyan-400",
+    }
+   
   ]
 
   const quickLinks = [
