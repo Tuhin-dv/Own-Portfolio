@@ -23,9 +23,7 @@ function Hero() {
   return (
     <div className="min-h-screen ">
       <div className="absolute inset-0">
-        <div className="absolute -top-40 -left-40 w-96 h-96 bg-gradient-to-r from-blue-500/5 via-purple-500/5 to-cyan-500/5 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute -top-20 -right-40 w-80 h-80 bg-gradient-to-r from-purple-500/5 via-pink-500/5 to-blue-500/5 rounded-full blur-3xl animate-pulse delay-1000"></div>
-        <div className="absolute -bottom-40 left-1/2 w-96 h-96 bg-gradient-to-r from-cyan-500/5 via-blue-500/5 to-purple-500/5 rounded-full blur-3xl animate-pulse delay-2000"></div>
+       
 
         {[...Array(20)].map((_, i) => (
           <div
@@ -44,7 +42,7 @@ function Hero() {
       <div className="relative z-10 pt-20 pb-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-[1600px] mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center min-h-[80vh]">
-            
+
             {/* Content Section */}
             <div ref={textRef} className="text-center lg:text-left space-y-8">
               <div className="space-y-4">
@@ -69,11 +67,11 @@ function Hero() {
 
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <Link to='/projects'>
-                <button className="bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600 text-white font-semibold py-4 px-8 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-purple-500/25">
-                  View My Work
-                </button>
-              </Link>
+                <Link to='/projects'>
+                  <button className="bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600 text-white font-semibold py-4 px-8 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-purple-500/25">
+                    View My Work
+                  </button>
+                </Link>
                 <button className="border-2 border-gray-600 hover:border-purple-400 text-gray-300 hover:text-white font-semibold py-4 px-8 rounded-full transition-all duration-300 hover:bg-purple-500/10">
                   Get In Touch
                 </button>
@@ -100,8 +98,10 @@ function Hero() {
                   <img
                     src={myImg}
                     alt="Professional Developer Portrait"
-                    className="w-[500px] max-w-[750px] object-cover rounded-xl"
+                    className="w-[280px] sm:w-[350px] md:w-[450px] lg:w-[500px] xl:w-[600px] max-w-full object-cover rounded-xl"
                   />
+
+
                 </div>
               </div>
             </div>

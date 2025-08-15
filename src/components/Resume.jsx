@@ -95,15 +95,14 @@ const Resume = () => {
         <div className="max-w-[1600px] mx-auto">
           {/* Header Section */}
           <div
-            className={`text-center mb-20 transform transition-all duration-1000 ${
-              isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
-            }`}
+            className={`text-center mb-20 transform transition-all duration-1000 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+              }`}
           >
-          
+
 
             <h2 className="text-5xl md:text-6xl font-bold mb-8 group relative">
               <span className="bg-gradient-to-r font from-white via-gray-100 to-gray-300 bg-clip-text text-transparent group-hover:from-blue-200 group-hover:via-purple-200 group-hover:to-cyan-200 transition-all duration-700 drop-shadow-2xl">
-                Resume 
+                Resume
               </span>
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-cyan-500/20 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
             </h2>
@@ -132,9 +131,8 @@ const Resume = () => {
           <div className="space-y-16">
             {/* Experience Section */}
             <div
-              className={`transform transition-all duration-1000 delay-300 ${
-                isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
-              }`}
+              className={`transform transition-all duration-1000 delay-300 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+                }`}
             >
               <div className="relative group">
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-cyan-500/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
@@ -168,8 +166,8 @@ const Resume = () => {
                               <div className="flex items-center gap-4 text-gray-300">
                                 <span className="text-lg font-semibold text-blue-400">{exp.company}</span>
                                 <div className="flex items-center gap-2">
-                              
-                                
+
+
                                 </div>
                               </div>
                             </div>
@@ -203,9 +201,8 @@ const Resume = () => {
 
             {/* Education Section */}
             <div
-              className={`transform transition-all duration-1000 delay-500 ${
-                isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
-              }`}
+              className={`transform transition-all duration-1000 delay-500 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+                }`}
             >
               <div className="relative group">
                 <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 via-cyan-500/20 to-blue-500/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
@@ -268,9 +265,8 @@ const Resume = () => {
 
             {/* Skills Section */}
             <div
-              className={`transform transition-all duration-1000 delay-700 ${
-                isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
-              }`}
+              className={`transform transition-all duration-1000 delay-700 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+                }`}
             >
               <div className="relative group">
                 <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 via-blue-500/20 to-purple-500/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
@@ -301,9 +297,8 @@ const Resume = () => {
                             </span>
                           </div>
                           <span
-                            className={`text-sm font-medium px-3 py-1 rounded-full ${
-                              activeSkill === index ? "bg-white/20 text-white" : "bg-white/10 text-gray-300"
-                            } transition-all duration-300`}
+                            className={`text-sm font-medium px-3 py-1 rounded-full ${activeSkill === index ? "bg-white/20 text-white" : "bg-white/10 text-gray-300"
+                              } transition-all duration-300`}
                           >
                             {skill.level}%
                           </span>
@@ -311,9 +306,8 @@ const Resume = () => {
                         <div className="relative">
                           <div className="w-full bg-white/10 backdrop-blur-xl rounded-full h-3 overflow-hidden border border-white/20">
                             <div
-                              className={`h-full bg-gradient-to-r ${skill.color} rounded-full transition-all duration-1000 relative ${
-                                activeSkill === index ? "animate-pulse shadow-lg" : ""
-                              }`}
+                              className={`h-full bg-gradient-to-r ${skill.color} rounded-full transition-all duration-1000 relative ${activeSkill === index ? "animate-pulse shadow-lg" : ""
+                                }`}
                               style={{
                                 width: `${skill.level}%`,
                                 transform: activeSkill === index ? "scaleY(1.2)" : "scaleY(1)",
